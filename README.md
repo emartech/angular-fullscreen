@@ -3,7 +3,7 @@
 View
 ---------
 
-    .e-row(ng-show="appCtrl.fullScreenAllowed")
+    .e-row(ng-show="appCtrl.isFullScreenAllowed")
         .e-col-12
           a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen="e-no-topmenu") {{ ::'main.expandFullScreen' | translate }}
           a(href="#" ng-show="appCtrl.isInFullScreen" fullscreen="e-no-topmenu") {{ ::'main.gatherFullScreen' | translate }}
@@ -17,7 +17,7 @@ Controller
         this._fullscreen = fullscreen;
       }
     
-      get fullScreenAllowed() {
+      get isFullScreenAllowed() {
         return this._fullscreen.isAllowed;
       }
     
