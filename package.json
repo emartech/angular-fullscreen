@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha test"
   },
   "author": "Viktor Somodi <viktor.somodi@emarsys.com>",
   "license": "ISC",
