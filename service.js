@@ -26,6 +26,16 @@ class FullScreen extends EventEmitter {
   }
 
 
+  turnOn() {
+    this._screenfull.request();
+  }
+
+
+  turnOff() {
+    this._screenfull.exit();
+  }
+
+
   _emitStateChangedEvent() {
     this.emit('changed', this._screenfull.isFullscreen);
   }

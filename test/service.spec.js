@@ -63,6 +63,40 @@ describe('Service', function() {
   
   });
 
+  describe('#turnOn', function() {
+
+    it('should set the fullscreen mode to on if it is off', function() {
+      screenfull.isFullscreen = false;
+      service.turnOn();
+      this.expect(service.isInFullScreen).to.be.true;
+    });
+
+
+    it('should keep the fullscreen mode on if it is on', function() {
+      screenfull.isFullscreen = true;
+      service.turnOn();
+      this.expect(service.isInFullScreen).to.be.true;
+    });
+
+  });
+
+  describe('#turnOff', function() {
+
+    it('should set the fullscreen mode to off if it is on', function() {
+      screenfull.isFullscreen = true;
+      service.turnOff();
+      this.expect(service.isInFullScreen).to.be.false;
+    });
+
+
+    it('should keep the fullscreen mode off if it is off', function() {
+      screenfull.isFullscreen = true;
+      service.turnOff();
+      this.expect(service.isInFullScreen).to.be.false;
+    });
+
+  });
+
   describe('changed event', function() {
 
     it('should emit a changed event with true if the fullscreen mode changed to on', function() {

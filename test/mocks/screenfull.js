@@ -13,6 +13,16 @@ class ScreenfullMock {
   }
 
 
+  request() {
+    this.isFullscreen = true;
+  }
+
+
+  exit() {
+    this.isFullscreen = false;
+  }
+
+
   toggle() {
     this.isFullscreen = !this.isFullscreen;
   }
