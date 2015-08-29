@@ -1,7 +1,7 @@
 'use strict';
 
 var MODULE_NAME = 'angularFullscreen';
-var Service = require('./service');
+var Service = require('./service/service');
 var Directive = require('./directive');
 var screenfull = require('screenfull');
 
