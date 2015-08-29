@@ -9,7 +9,7 @@
   "author": "Viktor Somodi <viktor.somodi@emarsys.com>",
   "license": "ISC",
   "dependencies": {
-    "screenfull": "^2.0.0"
+    "screenfull": "2.0.0"
   },
   "devDependencies": {
     "chai": "^3.2.0",
