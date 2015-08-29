@@ -2,22 +2,24 @@
 
 class FullScreenDirective {
 
-  constructor(fullscreen, document) {
-    this._$body = angular.element(document).find('body');
+  constructor(fullscreen, $body) {
+    this._$body = $body;
     this._fullscreenService = fullscreen;
     this.toggleFullScreen = this.toggleFullScreen.bind(this);
-    fullscreen.on('changed', () => this._toggleClass());
+    fullscreen.on('changed', function(isInFullscreen) {
+      if (!isInFullscreen) this._toggleClass();
+    }.bind(this));
   }
 
 
   toggleFullScreen() {
-    this._toggleClass();
     this._fullscreenService.toggle();
+    this._toggleClass();
   }
 
 
   _toggleClass() {
-    this._$body.toggleClass(this.fullscreen);
+    this._$body.toggleClass(this.fullscreen, this._fullscreenService.isInFullScreen);
   }
 
 }

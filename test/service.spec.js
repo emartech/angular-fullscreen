@@ -1,17 +1,17 @@
 'use strict';
 
-var Service = require('../service');
-var ScreenfullMock = require('./mocks/screenfull');
-var DocumentMock = require('./mocks/document');
+const Service = require('../service');
+const ScreenfullMock = require('./mocks/screenfull');
+const DocumentMock = require('./mocks/document');
 
 describe('Service', function() {
 
-  var service;
-  var document;
-  var screenfull;
+  let service;
+  let document;
+  let screenfull;
 
   beforeEach(function() {
-    document = new DocumentMock;
+    document = new DocumentMock();
     screenfull = new ScreenfullMock();
     service = new Service(document, screenfull);
   });
@@ -66,7 +66,7 @@ describe('Service', function() {
   describe('changed event', function() {
 
     it('should emit a changed event with true if the fullscreen mode changed to on', function() {
-      var eventCallback = this.sandbox.stub();
+      let eventCallback = this.sandbox.stub();
       screenfull.isFullscreen = true;
       service.on('changed', eventCallback);
 
@@ -76,7 +76,7 @@ describe('Service', function() {
 
 
     it('should emit a changed event with false if the fullscreen mode changed to off', function() {
-      var eventCallback = this.sandbox.stub();
+      let eventCallback = this.sandbox.stub();
       screenfull.isFullscreen = false;
       service.on('changed', eventCallback);
 
