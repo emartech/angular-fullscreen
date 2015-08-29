@@ -1,5 +1,20 @@
 # angular-fullscreen
 
+Install
+---------
+
+    npm install --save angular-fullscreen
+    
+    
+App
+---------
+
+    require('angular-fullscreen')(angular);
+    
+    angular.module('your-app', [
+      'angularFullscreen'
+    ]);
+
 View
 ---------
 
