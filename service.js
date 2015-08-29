@@ -6,27 +6,28 @@ class FullScreen extends EventEmitter {
 
   constructor(document, screenfull) {
     super();
-    document.addEventListener(screenfull.raw.fullscreenchange, this._emitStateChangedEvent);
+    this._screenfull = screenfull;
+    document.addEventListener(screenfull.raw.fullscreenchange, this._emitStateChangedEvent.bind(this));
   }
 
 
   get isAllowed() {
-    return screenfull.enabled;
+    return this._screenfull.enabled;
   }
 
 
   get isInFullScreen() {
-    return screenfull.isFullscreen;
+    return this._screenfull.isFullscreen;
   }
 
 
   toggle() {
-    screenfull.toggle();
+    this._screenfull.toggle();
   }
 
 
   _emitStateChangedEvent() {
-    this.emit('changed', screenfull.isFullscreen);
+    this.emit('changed', this._screenfull.isFullscreen);
   }
 
 }
