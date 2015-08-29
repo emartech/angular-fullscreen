@@ -22,6 +22,25 @@ class FullScreenDirective {
     this._$body.toggleClass(this.fullscreen, this._fullscreenService.isInFullScreen);
   }
 
+
+  static create() {
+    return function() {
+      return {
+        scope: {
+          fullscreen: '@'
+        },
+        restrict: 'A',
+        bindToController: true,
+        controller: ['fullscreen', '$body', FullScreenDirective],
+        controllerAs: 'fullScreenCtrl',
+        controllerClass: FullScreenDirective,
+        link: function (scope, element, attributes, controller) {
+          element.bind('click', controller.toggleFullScreen);
+        }
+      }
+    };
+  }
+
 }
 
 module.exports = FullScreenDirective;

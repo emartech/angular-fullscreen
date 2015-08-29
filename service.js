@@ -30,6 +30,11 @@ class FullScreen extends EventEmitter {
     this.emit('changed', this._screenfull.isFullscreen);
   }
 
+
+  static create() {
+    return ['document', 'screenfull', FullScreen];
+  }
+
 }
 
 module.exports = FullScreen;
