@@ -1,9 +1,9 @@
 'use strict';
 
-var MODULE_NAME = 'angularFullscreen';
-var Service = require('./service/service');
-var Directive = require('./directive');
-var screenfull = require('screenfull');
+const MODULE_NAME = 'angularFullscreen';
+const Service = require('./service/service');
+const Directive = require('./directive');
+const screenfull = require('screenfull');
 
 module.exports = function(angular) {
   angular
