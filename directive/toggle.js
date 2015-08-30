@@ -5,14 +5,14 @@ class FullScreenDirective {
   constructor(fullscreen, $body) {
     this._$body = $body;
     this._fullscreenService = fullscreen;
-    this.toggleFullScreen = this.toggleFullScreen.bind(this);
+    this.toggle = this.toggle.bind(this);
     fullscreen.on('changed', function(isInFullscreen) {
       if (!isInFullscreen) this._toggleClass();
     }.bind(this));
   }
 
 
-  toggleFullScreen() {
+  toggle() {
     this._fullscreenService.toggle();
     this._toggleClass();
   }
@@ -35,7 +35,7 @@ class FullScreenDirective {
         controllerAs: 'fullScreenCtrl',
         controllerClass: FullScreenDirective,
         link: function (scope, element, attributes, controller) {
-          element.bind('click', controller.toggleFullScreen);
+          element.bind('click', controller.toggle);
         }
       }
     };

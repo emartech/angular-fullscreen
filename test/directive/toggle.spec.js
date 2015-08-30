@@ -24,12 +24,12 @@ describe('Toggle Directive', function() {
     directive.fullscreenClass = fullScreenClassName;
   });
 
-  describe('#toggleFullScreen', function() {
+  describe('#toggle', function() {
 
     it('should change the view to fullscreen if fullscreen is off', function() {
       screenfull.isFullscreen = false;
 
-      directive.toggleFullScreen();
+      directive.toggle();
       this.expect(screenfull.isFullscreen).to.eql(true);
     });
 
@@ -37,7 +37,7 @@ describe('Toggle Directive', function() {
     it('should change the view to normal if fullscreen is on', function() {
       screenfull.isFullscreen = true;
 
-      directive.toggleFullScreen();
+      directive.toggle();
       this.expect(screenfull.isFullscreen).to.eql(false);
     });
 
@@ -45,7 +45,7 @@ describe('Toggle Directive', function() {
     it('should add the fullscreen class to the body if fullscreen is off', function() {
       screenfull.isFullscreen = false;
 
-      directive.toggleFullScreen();
+      directive.toggle();
       this.expect($body.hasClass(fullScreenClassName)).to.be.true;
     });
 
@@ -54,7 +54,7 @@ describe('Toggle Directive', function() {
       screenfull.isFullscreen = true;
       $body.addClass(fullScreenClassName);
 
-      directive.toggleFullScreen();
+      directive.toggle();
       this.expect($body.hasClass(fullScreenClassName)).to.be.false;
     });
 
@@ -62,7 +62,7 @@ describe('Toggle Directive', function() {
     it('should not add the fullscreen class to the body if fullscreen is on and the body do not has the fullscreen class', function() {
       screenfull.isFullscreen = true;
 
-      directive.toggleFullScreen();
+      directive.toggle();
       this.expect($body.hasClass(fullScreenClassName)).to.be.false;
     });
 
@@ -71,7 +71,7 @@ describe('Toggle Directive', function() {
       screenfull.isFullscreen = false;
       $body.addClass(fullScreenClassName);
 
-      directive.toggleFullScreen();
+      directive.toggle();
       this.expect($body.hasClass(fullScreenClassName)).to.be.true;
     });
 
