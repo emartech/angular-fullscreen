@@ -1,7 +1,7 @@
 'use strict';
 
 const MODULE_NAME = 'angularFullscreen';
-const Service = require('./service/service');
+const Service = require('./service');
 const ToggleDirective = require('./directive/toggle');
 const GatherDirective = require('./directive/gather');
 const ExpandDirective = require('./directive/expand');
@@ -14,9 +14,9 @@ module.exports = function(angular) {
     .constant('screenfull', screenfull)
     .constant('$body', angular.element(document).find('body'))
     .service('fullscreen', Service.create())
-    .directive('fullscreen-toggle', ToggleDirective.create())
-    .directive('fullscreen-gather', GatherDirective.create())
-    .directive('fullscreen-expand', ExpandDirective.create());
+    .directive('fullscreenToggle', ToggleDirective.create())
+    .directive('fullscreenGather', GatherDirective.create())
+    .directive('fullscreenExpand', ExpandDirective.create());
 
   return MODULE_NAME;
 };
