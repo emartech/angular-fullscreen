@@ -6,7 +6,7 @@ const ScreenfullMock = require('./../mocks/screenfull');
 const DocumentMock = require('./../mocks/document');
 const BodyMock = require('./../mocks/body');
 
-describe('Directive', function() {
+describe('Toggle Directive', function() {
 
   const fullScreenClassName = 'im-am-the-full-screen-class';
   let directive;
@@ -21,7 +21,7 @@ describe('Directive', function() {
     document = new DocumentMock();
     service = new Service(document, screenfull);
     directive = new ToggleDirective(service, $body);
-    directive.fullscreen = fullScreenClassName;
+    directive.fsBodyClass = fullScreenClassName;
   });
 
   describe('#toggleFullScreen', function() {
