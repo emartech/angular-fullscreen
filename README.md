@@ -15,14 +15,28 @@ App
       'angularFullscreen'
     ]);
 
-View
+Toggle
 ---------
 
     .e-row(ng-show="appCtrl.isFullScreenAllowed")
-        .e-col-12
-          a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen="e-no-topmenu") {{ ::'main.expandFullScreen' | translate }}
-          a(href="#" ng-show="appCtrl.isInFullScreen" fullscreen="e-no-topmenu") {{ ::'main.gatherFullScreen' | translate }}
-      
+      .e-col-12
+        a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen fullscreen-body-class="e-no-topmenu")
+         span(ng-hide="appCtrl.isInFullScreen") expand
+         span(ng-show="appCtrl.isInFullScreen") gather
+        
+Change between modes
+---------
+    .e-row(ng-show="appCtrl.isFullScreenAllowed")
+      .e-col-12
+        a(href="#" fullscreen-expand fullscreen-body-class="e-no-topmenu") expand without top menu
+        a(href="#" fullscreen-expand fullscreen-body-class="e-no-leftmenu") expand without left menu
+        
+Exit
+---------
+    .e-row(ng-show="appCtrl.isFullScreenAllowed")
+      .e-col-12
+        a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen-gather) gather
+        
 Controller
 ---------
 
