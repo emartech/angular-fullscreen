@@ -1,10 +1,10 @@
 'use strict';
 
-const Directive = require('../directive');
-const Service = require('../service');
-const ScreenfullMock = require('./mocks/screenfull');
-const DocumentMock = require('./mocks/document');
-const BodyMock = require('./mocks/body');
+const ToggleDirective = require('../../directive/toggle');
+const Service = require('../../service');
+const ScreenfullMock = require('./../mocks/screenfull');
+const DocumentMock = require('./../mocks/document');
+const BodyMock = require('./../mocks/body');
 
 describe('Directive', function() {
 
@@ -20,7 +20,7 @@ describe('Directive', function() {
     screenfull = new ScreenfullMock();
     document = new DocumentMock();
     service = new Service(document, screenfull);
-    directive = new Directive(service, $body);
+    directive = new ToggleDirective(service, $body);
     directive.fullscreen = fullScreenClassName;
   });
 
