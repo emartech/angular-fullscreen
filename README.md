@@ -15,29 +15,30 @@ App
       'angularFullscreen'
     ]);
 
+Expand
+---------
+
+    .e-row(ng-show="appCtrl.isFullScreenAllowed && !appCtrl.isInFullScreen")
+      .e-col-12
+        a(href="#" fullscreen-expand fullscreen-class="e-no-topmenu") expand without top menu
+        a(href="#" fullscreen-expand fullscreen-class="e-no-leftmenu") expand without left menu
+        
+Gather
+---------
+
+    .e-row(ng-show="appCtrl.isFullScreenAllowed" && appCtrl.isInFullScreen)
+      .e-col-12
+        a(href="#" fullscreen-gather) gather
+
 Toggle
 ---------
 
     .e-row(ng-show="appCtrl.isFullScreenAllowed")
       .e-col-12
-        a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen-toggle fullscreen-class="e-no-topmenu")
+        a(href="#" fullscreen-toggle fullscreen-class="e-no-topmenu")
          span(ng-hide="appCtrl.isInFullScreen") expand
          span(ng-show="appCtrl.isInFullScreen") gather
         
-Change between modes
----------
-
-    .e-row(ng-show="appCtrl.isFullScreenAllowed")
-      .e-col-12
-        a(href="#" fullscreen-expand fullscreen-class="e-no-topmenu") expand without top menu
-        a(href="#" fullscreen-expand fullscreen-class="e-no-leftmenu") expand without left menu
-        
-Exit
----------
-
-    .e-row(ng-show="appCtrl.isFullScreenAllowed")
-      .e-col-12
-        a(href="#" ng-show="appCtrl.isInFullScreen" fullscreen-gather) gather
         
 Controller
 ---------
