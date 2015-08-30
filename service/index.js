@@ -26,12 +26,12 @@ class FullScreen extends EventEmitter {
   }
 
 
-  turnOn() {
+  expand() {
     this._screenfull.request();
   }
 
 
-  turnOff() {
+  gather() {
     this._screenfull.exit();
   }
 

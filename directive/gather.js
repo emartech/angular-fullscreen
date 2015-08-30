@@ -10,7 +10,7 @@ class GatherDirective {
 
 
   gather() {
-    this._fullscreenService.turnOff();
+    this._fullscreenService.gather();
   }
 
 

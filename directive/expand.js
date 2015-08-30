@@ -11,7 +11,7 @@ class ExpandDirective extends BaseDirective {
 
 
   expand() {
-    this._fullscreenService.turnOn();
+    this._fullscreenService.expand();
     this._toggleClass();
   }
 
