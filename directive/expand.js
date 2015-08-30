@@ -2,16 +2,16 @@
 
 var BaseDirective = require('./_base');
 
-class ToggleDirective extends BaseDirective {
+class ExpandDirective extends BaseDirective {
 
   constructor(fullscreen, $body) {
     super(fullscreen, $body);
-    this.toggle = this.toggle.bind(this);
+    this.expand = this.expand.bind(this);
   }
 
 
-  toggle() {
-    this._fullscreenService.toggle();
+  expand() {
+    this._fullscreenService.turnOn();
     this._toggleClass();
   }
 
@@ -24,11 +24,11 @@ class ToggleDirective extends BaseDirective {
         },
         restrict: 'A',
         bindToController: true,
-        controller: ['fullscreen', '$body', ToggleDirective],
+        controller: ['fullscreen', '$body', ExpandDirective],
         controllerAs: 'fullScreenCtrl',
-        controllerClass: ToggleDirective,
+        controllerClass: ExpandDirective,
         link: function (scope, element, attributes, controller) {
-          element.bind('click', controller.toggle);
+          element.bind('click', controller.expand);
         }
       }
     };
@@ -36,4 +36,4 @@ class ToggleDirective extends BaseDirective {
 
 }
 
-module.exports = ToggleDirective;
+module.exports = ExpandDirective;
