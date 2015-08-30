@@ -19,7 +19,7 @@ class FullScreenDirective {
 
 
   _toggleClass() {
-    this._$body.toggleClass(this.fsBodyClass, this._fullscreenService.isInFullScreen);
+    this._$body.toggleClass(this.fullscreenClass, this._fullscreenService.isInFullScreen);
   }
 
 
@@ -27,7 +27,7 @@ class FullScreenDirective {
     return function() {
       return {
         scope: {
-          fsBodyClass: '@'
+          fullscreenClass: '@'
         },
         restrict: 'A',
         bindToController: true,

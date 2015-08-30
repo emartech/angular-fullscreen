@@ -21,7 +21,7 @@ describe('Toggle Directive', function() {
     document = new DocumentMock();
     service = new Service(document, screenfull);
     directive = new ToggleDirective(service, $body);
-    directive.fsBodyClass = fullScreenClassName;
+    directive.fullscreenClass = fullScreenClassName;
   });
 
   describe('#toggleFullScreen', function() {
