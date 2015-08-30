@@ -20,7 +20,7 @@ Toggle
 
     .e-row(ng-show="appCtrl.isFullScreenAllowed")
       .e-col-12
-        a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen fullscreen-body-class="e-no-topmenu")
+        a(href="#" ng-hide="appCtrl.isInFullScreen" fullscreen-toggle fullscreen-body-class="e-no-topmenu")
          span(ng-hide="appCtrl.isInFullScreen") expand
          span(ng-show="appCtrl.isInFullScreen") gather
         

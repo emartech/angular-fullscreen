@@ -3,6 +3,7 @@
 const MODULE_NAME = 'angularFullscreen';
 const Service = require('./service/service');
 const ToggleDirective = require('./directive/toggle');
+const GatherDirective = require('./directive/gather');
 const screenfull = require('screenfull');
 
 module.exports = function(angular) {
@@ -12,7 +13,8 @@ module.exports = function(angular) {
     .constant('screenfull', screenfull)
     .constant('$body', angular.element(document).find('body'))
     .service('fullscreen', Service.create())
-    .directive('toggle-fullscreen', Directive.create());
+    .directive('fullscreen-toggle', ToggleDirective.create())
+    .directive('fullscreen-gather', GatherDirective.create());
 
   return MODULE_NAME;
 };

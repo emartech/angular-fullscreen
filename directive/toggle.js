@@ -1,6 +1,6 @@
 'use strict';
 
-class FullScreenDirective {
+class ToggleDirective {
 
   constructor(fullscreen, $body) {
     this._$body = $body;
@@ -31,9 +31,9 @@ class FullScreenDirective {
         },
         restrict: 'A',
         bindToController: true,
-        controller: ['fullscreen', '$body', FullScreenDirective],
+        controller: ['fullscreen', '$body', ToggleDirective],
         controllerAs: 'fullScreenCtrl',
-        controllerClass: FullScreenDirective,
+        controllerClass: ToggleDirective,
         link: function (scope, element, attributes, controller) {
           element.bind('click', controller.toggle);
         }
@@ -43,4 +43,4 @@ class FullScreenDirective {
 
 }
 
-module.exports = FullScreenDirective;
+module.exports = ToggleDirective;
