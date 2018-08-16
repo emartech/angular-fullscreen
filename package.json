@@ -12,7 +12,7 @@
     "test": "mocha test"
   },
   "author": "Viktor Somodi <viktor.somodi@emarsys.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "screenfull": "2.0.0"
   },
